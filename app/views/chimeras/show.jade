@@ -1,0 +1,15 @@
+extends ../shared/template
+
+block content
+
+  .show
+    .name
+       a(href='/chimeras')= chimera.name
+    .gender Gender: #{chimera.gender}
+    .age Age: #{chimera.age}
+    .head
+      img(src='/img/#{chimera.head}')
+    .body
+      img(src='/img/#{chimera.body}')
+    .feet
+      img(src='/img/#{chimera.feet}')  

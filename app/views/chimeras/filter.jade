@@ -1,0 +1,18 @@
+extends ../shared/template
+
+block content
+  #search Search Results
+
+  #chimeras
+      each chimera in chimeras
+        .chimera
+          .name
+            a(href='/chimeras/#{chimera._id}')= chimera.name
+          .gender Gender: #{chimera.gender}
+          .age Age: #{chimera.age}
+          .head
+            img(src='/img/#{chimera.head}')
+          .body
+            img(src='/img/#{chimera.body}')
+          .feet
+            img(src='/img/#{chimera.feet}')

@@ -1,0 +1,39 @@
+extends ../shared/template
+
+block content
+  #listings Chimera Listings
+
+  #controls
+    a(href='/chimeras/new' class= 'button button-rounded button-royal' id='new') New Chimera
+  #filter
+    form(method='GET', action='/chimeras/filter')
+      span Filter:
+      select(name='section')
+        option Select Section
+        option head
+        option body
+        option feet
+      select(name='animal')
+        option Select Animal
+        option meerkat
+        option crab
+        Option bunny
+        Option genie
+      button(class='button button-rounded button-royal') Search
+
+  #chimeras
+      each chimera in chimeras
+        .chimera
+          .name
+            a(href='/chimeras/#{chimera._id}')= chimera.name
+          .gender Gender: #{chimera.gender}
+          .age Age: #{chimera.age}
+          .head
+            img(src='/img/#{chimera.head}')
+          .body
+            img(src='/img/#{chimera.body}')
+          .feet
+            img(src='/img/#{chimera.feet}')
+          .delete
+            form(action='/chimeras/#{chimera._id}/delete', method='POST')
+              button(class='button button-rounded button-royal') Delete

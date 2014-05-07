@@ -6,7 +6,15 @@ html
     link(href='/css/normalize.css', rel='stylesheet')
     link(href='/css/buttons.css', rel='stylesheet')
     link(href='/less/app.css', rel='stylesheet')
-  body
+  body(style='background-image:url(/img/#{bg});')
+    nav
+      span
+        a(href='/' class='button button-rounded button-royal') Home
+      span
+        a(href='/about' class='button button-rounded button-royal') About
+      span
+        a(href='/chimeras' class='button button-rounded button-royal') Chimeras
+
     block content
 
     script(src='/js/vendor/jquery-2.1.1.js')

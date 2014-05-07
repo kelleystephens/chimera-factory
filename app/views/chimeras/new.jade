@@ -1,0 +1,31 @@
+extends ../shared/template
+
+block content
+  #new Make A New Chimera
+
+  form(method='POST', action='/chimeras')
+    input(name='name' type='text' autofocus=true placeholder='Name')
+    input(name='age' type='text' placeholder='Age')
+    select(name='gender')
+      option Select Gender
+      option Male
+      option Female
+    select(name='head')
+      option Select Head
+      option Meerkat
+      option Crab
+      Option Bunny
+      Option Genie
+    select(name='body')
+      option Select Body
+      option Meerkat
+      option Crab
+      Option Bunny
+      Option Genie
+    select(name='feet')
+      option Select Feet
+      option Meerkat
+      option Crab
+      Option Bunny
+      Option Genie
+    button(class='button button-rounded button-royal') Create!
